@@ -7,7 +7,21 @@
     <link rel="stylesheet" href="./style.css">
     <title>Vite App</title>
   </head>
-  <body>
+  <body id="cuerpo">
+
+    <header class="header-container" id="header">
+      <ul>
+        <li>home</li>
+        <li>store</li>
+        <li>about</li>
+      </ul>
+      <button id="modeTheme">dark mode</button>
+      <button id="modoNormal">light mode</button>
+    </header>
+
+    <div id="contenedorAcciones">
+      acciones
+    </div>
 
     <div class="layout">
       <div id="app" class="container-product"></div>
@@ -15,6 +29,8 @@
     </div>
     <script type="module" src="/main.js"></script>
     <script type="module" src="./carrito.js"></script>
+    <script type="module" src="./modeTheme.js"></script>
+    <script type="module" src="./createProduct.js"></script>
   </body>
 </html>
 

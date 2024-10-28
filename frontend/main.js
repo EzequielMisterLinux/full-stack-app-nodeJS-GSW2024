@@ -7,6 +7,8 @@ let urlGlobal = "http://localhost:3000/api"
 const obtenerTodosLosProductos = async () => {
   
   try {
+
+
     
     const respuestaServidor = await axios.get(`${urlGlobal}/obtener-todos-los-products`)
 

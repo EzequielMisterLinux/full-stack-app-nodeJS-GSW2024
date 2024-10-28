@@ -15,3 +15,19 @@ carrito.innerHTML = `
 `
 })
 
+let modeStatus = localStorage.getItem("modeTheme")
+
+switch (modeStatus) {
+    case "verdadero":
+
+    carrito.style.color = "white"
+        
+        break;
+    case "falso":
+        carrito.style.color = "black"
+
+        break;
+
+    default:
+        break;
+}

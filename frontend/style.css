@@ -24,3 +24,20 @@
 .layout {
   display: flex;
 }
+
+.header-container {
+  display: flex;
+  background-color: azure;
+  justify-content: center;
+}
+
+.header-container ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 5px 10px;
+}
+
+.header-container ul li {
+  padding: 0 10px;
+}
