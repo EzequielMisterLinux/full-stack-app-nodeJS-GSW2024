@@ -4,6 +4,15 @@ const createNewProduct = async (req, res) => {
     
     const {nombre, precio , disponibilidad, imagen} = req.body
 
+    if (!nombre || !precio || !disponibilidad || !imagen) {
+        res.status(401).json({
+            msj : "todos los atributos de la peticion son requeridos"
+        })
+    }
+
+    
+
+
     try {
         
         let crearProducto = await productModel({nombre, precio , disponibilidad, imagen})
