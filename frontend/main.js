@@ -1,6 +1,7 @@
 //npm install axios instalar esta libreria
 import axios from "axios";
 import Swal from "sweetalert2";
+import cargandoCarrito from "./carrito";
 
 let urlGlobal = "http://localhost:3000/api"
 
@@ -43,12 +44,15 @@ const obtenerTodosLosProductos = async () => {
 
       let contenedorDeProductos = document.createElement("div")
 
+      contenedorDeProductos.textContent =""
+
       contenedorDeProductos.innerHTML = `
       <div class="container-element-card">
       
         <p>${item.nombre}</p>
         <p>${item.precio}</p>
         <p>${disponibilidadactual}</p>
+        <img src=${item.imagen} alt=${item.name}/>
         <button id=${item._id}>agregar al carrito</button>
 
       </div>
@@ -67,6 +71,7 @@ const obtenerTodosLosProductos = async () => {
           text: "vea en el carrito sus productos!!",
           icon: "success"
         });
+        cargandoCarrito()
 
         let agregar = JSON.parse(localStorage.getItem("products")
       ) || []
@@ -93,3 +98,6 @@ const obtenerTodosLosProductos = async () => {
 
 }
 obtenerTodosLosProductos()
+
+
+export default obtenerTodosLosProductos

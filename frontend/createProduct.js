@@ -2,18 +2,34 @@ import axios from "axios";
 
 let urlGlobal = "http://localhost:3000/api"
 
+let contenedorAccion = document.getElementById("contenedorAcciones")
+
+contenedorAccion.innerHTML= `
+<input type="text" id="nombre">
+<input type="number" id="precio">
+<input type="text" id="disponibilidad">
+<input type="string" id="imagen">
+`
+
+
 const CreandoProducto = async() => {
     
-    let nombre = "samsung galaxy s21"
+    let nombre = document.getElementById("nombre")
+    console.log(nombre.value);
+    
 
-    let precio = 299
+    let precio = document.getElementById("precio")
 
-    let disponibilidad = true
+    let disponibilidad = document.getElementById("disponibilidad")
+
+    let imagen = document.getElementById("imagen")
+
 
     let data = {
-        "nombre": nombre,
-        "precio": precio,
-        "disponibilidad": disponibilidad
+        "nombre": nombre.value,
+        "precio": precio.value,
+        "disponibilidad": true,
+        "imagen": imagen.value
     }
 
     try {
@@ -39,8 +55,9 @@ contenedorAcciones.appendChild(crearProductos)
 
 let btnAgregar = document.getElementById("agregar")
 
-btnAgregar.addEventListener("click", () => {
-    CreandoProducto()
-    console.log(CreandoProducto());
+btnAgregar.addEventListener("click", async() => {
+    const creando = await CreandoProducto()
+    obtenerTodosLosProductos()
+    console.log(creando);
     
 })

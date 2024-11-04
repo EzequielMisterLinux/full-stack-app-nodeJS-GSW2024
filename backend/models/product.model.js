@@ -15,6 +15,11 @@ const productSchema = mongoose.Schema({
 
         type :Boolean,
         require: true
+    },
+
+    imagen : {
+        type: String,
+        require: true
     }
 })
 
