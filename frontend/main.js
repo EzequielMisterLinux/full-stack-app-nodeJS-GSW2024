@@ -19,9 +19,7 @@ const obtenerTodosLosProductos = async () => {
     
 
     for(let item of obtenerTodosLosProducts){
-      console.log(item.nombre);
-      console.log(item.precio);
-      console.log(item.disponibilidad);
+
       
       
 
@@ -52,7 +50,7 @@ const obtenerTodosLosProductos = async () => {
         <p>${item.nombre}</p>
         <p>${item.precio}</p>
         <p>${disponibilidadactual}</p>
-        <img src=${item.imagen} alt=${item.name}/>
+        <img src=${item.imagen} alt=${item.name} width="200px" height="150px" />
         <button id=${item._id}>agregar al carrito</button>
 
       </div>
@@ -71,7 +69,9 @@ const obtenerTodosLosProductos = async () => {
           text: "vea en el carrito sus productos!!",
           icon: "success"
         });
-        cargandoCarrito()
+
+        cargandoCarrito();
+        
 
         let agregar = JSON.parse(localStorage.getItem("products")
       ) || []
@@ -79,7 +79,8 @@ const obtenerTodosLosProductos = async () => {
         agregar.push({
           
           "nombre":item.nombre,
-          "precio":item.precio
+          "precio":item.precio,
+          "imagen":item.imagen
         })
 
         localStorage.setItem("products", JSON.stringify(agregar))

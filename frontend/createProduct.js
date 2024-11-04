@@ -7,7 +7,7 @@ let contenedorAccion = document.getElementById("contenedorAcciones")
 contenedorAccion.innerHTML= `
 <input type="text" id="nombre">
 <input type="number" id="precio">
-<input type="text" id="disponibilidad">
+<input type="text" id="disponibilidad" value=true readonly>
 <input type="string" id="imagen">
 `
 
@@ -20,6 +20,8 @@ const CreandoProducto = async() => {
 
     let precio = document.getElementById("precio")
 
+    let precioParse = parseFloat(precio.value)
+
     let disponibilidad = document.getElementById("disponibilidad")
 
     let imagen = document.getElementById("imagen")
@@ -27,7 +29,7 @@ const CreandoProducto = async() => {
 
     let data = {
         "nombre": nombre.value,
-        "precio": precio.value,
+        "precio": precioParse,
         "disponibilidad": true,
         "imagen": imagen.value
     }
